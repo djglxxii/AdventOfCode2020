@@ -5,7 +5,7 @@ namespace Day4
 {
     public class Passport : List<KeyValuePair<string, string>>
     {
-        public bool IsValid()
+        public virtual bool IsValid()
         {
             //example of valid
             //ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
