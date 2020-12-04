@@ -3,6 +3,16 @@
   <component name="ContentModelStore">
     <e p="C:\src\AdventOfCode2020\AdventOfCode2020" t="IncludeFlat">
       <e p="AdventOfCode2020.sln" t="IncludeFlat" />
+      <e p="Day1" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Day1.csproj" t="IncludeRecursive" />
+        <e p="input.txt" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
       <e p="Day3" t="IncludeRecursive">
         <e p="app.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -28,7 +38,7 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AdventOfCode2020.2118852585.00" t="ExcludeRecursive" />
+    <e p="C:\Users\djgLXXII\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\djgLXXII\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AdventOfCode2020.2118852585.00" t="ExcludeRecursive" />
   </component>
 </project>
