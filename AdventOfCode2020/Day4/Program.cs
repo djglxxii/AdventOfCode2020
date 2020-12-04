@@ -9,6 +9,11 @@ namespace Day4
     {
         public static void Main(string[] args)
         {
+           Part1Solution();
+        }
+
+        private static void Part1Solution()
+        {
             var passports = new List<Passport>();
 
             using (var reader = new StreamReader("input.txt"))
@@ -40,10 +45,20 @@ namespace Day4
                         passport.Add(new KeyValuePair<string, string>(key, val));
                     }
                 }
+                
+                passports.Add(passport);
             }
-
-            var totalPassports = passports.Count;
-            var validCount = passports.Count(p => p.IsValid());
+            
+            int totalPassports = passports.Count;
+            int validCount = 0;
+        
+            foreach (var passport in passports)
+            {
+                if (passport.IsValid())
+                {
+                    validCount++;
+                }
+            }
             
             Console.WriteLine($"Total passports {totalPassports}, {validCount} are valid.");
         }
