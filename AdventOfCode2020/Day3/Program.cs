@@ -1,66 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Linq;
 
 namespace Day3
 {
+    // https://adventofcode.com/2020/day/3
     class Program
     {
-        private static List<char[]> rows = new List<char[]>();
-
         static void Main(string[] args)
         {
+            var slopes = new List<char[]>();
+
             using (var reader = new StreamReader("input.txt"))
             {
-                var lines = new List<string>();
-
                 while (!reader.EndOfStream)
                 {
-                    lines.Add(reader.ReadLine());
-                }
+                    string line = reader.ReadLine();
 
-                int repeatMultiplier = 150;
-
-                foreach (var line in lines)
-                {
-                    var sb = new StringBuilder();
-
-                    for (int i = 0; i <= repeatMultiplier; i++)
+                    if (!string.IsNullOrEmpty(line))
                     {
-                        sb.Append(line);
+                        slopes.Add(line.ToCharArray());
                     }
-
-                    rows.Add(sb.ToString().ToCharArray());
                 }
             }
 
-            var numsToProd = new List<int>();
+            Part1Solution(slopes);
+            Part2Solution(slopes);
 
-            numsToProd.Add(FindTrees(1,1));
-            numsToProd.Add(FindTrees(1, 3));
-            numsToProd.Add(FindTrees(1, 5));
-            numsToProd.Add(FindTrees(1, 7));
-            numsToProd.Add(FindTrees(2, 1));
-
-            Int64 prod = 1;
-
-            numsToProd.ForEach(n => prod = prod * n);
-
-            Console.WriteLine(prod);
-
+            Console.WriteLine("Done! Press any key to exit.");
             Console.ReadLine();
         }
 
-        private static int FindTrees(int rowStep, int colModifier)
+        private static void Part1Solution(List<char[]> slopes)
+        {
+            int treeCount = FindTrees(slopes, 1, 3);
+            Console.WriteLine(treeCount);
+        }
+
+        private static void Part2Solution(List<char[]> slopes)
+        {
+            long product = 1;
+
+            product *= FindTrees(slopes, 1, 1);
+            product *= FindTrees(slopes, 1, 3);
+            product *= FindTrees(slopes, 1, 5);
+            product *= FindTrees(slopes, 1, 7);
+            product *= FindTrees(slopes, 2, 1);
+
+            Console.WriteLine(product);
+        }
+
+        private static int FindTrees(List<char[]> slopes, int slopeStep, int colStep)
         {
             int colPos = 0, treeCount = 0;
+            int rowWidth = slopes.First().Length;
 
-            for (int r = rowStep; r < rows.Count; r = r + rowStep)
+            for (int r = slopeStep; r < slopes.Count; r = r + slopeStep)
             {
-                colPos = colPos + colModifier;
+                colPos = (colPos + colStep) % rowWidth;
 
-                if (rows[r][colPos] == '#') treeCount++;
+                if (slopes[r][colPos] == '#') treeCount++;
             }
 
             return treeCount;
