@@ -56,7 +56,7 @@ namespace Day3
             int colPos = 0, treeCount = 0;
             int rowWidth = slopes.First().Length;
 
-            for (int r = slopeStep; r < slopes.Count; r = r + slopeStep)
+            for (int r = slopeStep; r < slopes.Count; r += slopeStep)
             {
                 colPos = (colPos + colStep) % rowWidth;
 
