@@ -10,7 +10,11 @@ namespace Day4
     {
         public static void Main(string[] args)
         {
-           Part2Solution();
+            Part1Solution();
+            Part2Solution();
+
+            Console.WriteLine("Done! Press any key to exit.");
+            Console.ReadLine();
         }
 
         private static void Part1Solution()
@@ -29,9 +33,9 @@ namespace Day4
                     {
                         if (passport.Any())
                         {
-                            passports.Add(passport);    
+                            passports.Add(passport);
                         }
-                        
+
                         passport = new Passport();
                         continue;
                     }
@@ -46,13 +50,13 @@ namespace Day4
                         passport.Add(new KeyValuePair<string, string>(key, val));
                     }
                 }
-                
+
                 passports.Add(passport);
             }
-            
+
             int totalPassports = passports.Count;
             int validCount = 0;
-        
+
             foreach (var passport in passports)
             {
                 if (passport.IsValid())
@@ -60,7 +64,7 @@ namespace Day4
                     validCount++;
                 }
             }
-            
+
             Console.WriteLine($"Total passports {totalPassports}, {validCount} are valid.");
         }
 
@@ -80,9 +84,9 @@ namespace Day4
                     {
                         if (passport.Any())
                         {
-                            passports.Add(passport);    
+                            passports.Add(passport);
                         }
-                        
+
                         passport = new PassportV2();
                         continue;
                     }
@@ -97,13 +101,13 @@ namespace Day4
                         passport.Add(new KeyValuePair<string, string>(key, val));
                     }
                 }
-                
+
                 passports.Add(passport);
             }
-            
+
             int totalPassports = passports.Count;
             int validCount = 0;
-        
+
             foreach (var passport in passports)
             {
                 if (passport.IsValid())
@@ -111,7 +115,7 @@ namespace Day4
                     validCount++;
                 }
             }
-            
+
             Console.WriteLine($"Total passports {totalPassports}, {validCount} are valid.");
         }
     }
