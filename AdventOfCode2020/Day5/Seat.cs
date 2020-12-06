@@ -17,6 +17,7 @@ namespace Day5
 
         public int GetSeatNo()
         {
+            // the seat codes are just binary representations of the seat no.
             var sb = new StringBuilder(_seatCode);
             sb.Replace("F", "0");
             sb.Replace("B", "1");
