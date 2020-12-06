@@ -7,7 +7,7 @@ namespace Day6
     public class GroupQuestionnaireV2
     {
         private readonly Dictionary<char, int> _map = new Dictionary<char, int>();
-        private int groupMemberCount = 0;
+        private int _groupMemberCount = 0;
 
         public void AddResult(string result)
         {
@@ -23,15 +23,14 @@ namespace Day6
                 }
             }
 
-            groupMemberCount++;
+            _groupMemberCount++;
         }
 
-        public bool AllAnsweredYes()
+        public int NumAnsweredYes()
         {
-            var set = new HashSet<int>();
-            _map.Select(kvp => kvp.Value).ToList().ForEach(n => set.Add(n));
-            
-            return set.Count == groupMemberCount;
+            var count = _map.Values.Count(v => v == _groupMemberCount);
+
+            return count;
         }
     }
 }

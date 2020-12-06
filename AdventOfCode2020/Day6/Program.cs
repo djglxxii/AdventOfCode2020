@@ -58,6 +58,8 @@ namespace Day6
                     {
                         questionnaires.Add(gq);
                         gq = new GroupQuestionnaireV2();
+
+                        continue;
                     }
 
                     gq.AddResult(line);
@@ -66,7 +68,7 @@ namespace Day6
                 questionnaires.Add(gq);
             }
 
-            var count = questionnaires.Count(gq => gq.AllAnsweredYes());
+            var count = questionnaires.Sum(gq => gq.NumAnsweredYes());
             
             Console.WriteLine(count);
         }
