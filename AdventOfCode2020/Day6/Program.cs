@@ -9,12 +9,17 @@ namespace Day6
     {
         public static void Main(string[] args)
         {
+            Part1Solution();
+        }
+
+        private static void Part1Solution()
+        {
             var questionnaires = new List<GroupQuestionnaire>();
 
             using (var reader = new StreamReader("input.txt"))
             {
                 var gq = new GroupQuestionnaire();
-                
+
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
@@ -23,8 +28,10 @@ namespace Day6
                         questionnaires.Add(gq);
                         gq = new GroupQuestionnaire();
                     }
+
                     gq.AddResult(line);
                 }
+
                 questionnaires.Add(gq);
             }
 
