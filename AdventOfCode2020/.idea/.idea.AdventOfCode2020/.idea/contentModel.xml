@@ -64,6 +64,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Day6.csproj" t="IncludeRecursive" />
         <e p="GroupQuestionnaire.cs" t="Include" />
+        <e p="GroupQuestionnaireV2.cs" t="Include" />
         <e p="input.txt" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
