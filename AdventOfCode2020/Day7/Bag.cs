@@ -1,38 +1,35 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Day7
 {
     public class Bag
     {
+        private readonly Dictionary<Bag, int> _map = new Dictionary<Bag, int>();
+
         public string Color { get; }
 
-        public Dictionary<Bag, int> InnerBags = new Dictionary<Bag, int>();
-        
-        public Bag(string bagColor)
+        public Bag(string color)
         {
-            Color = bagColor;
+            Color = color;
         }
 
-        public int GetBagCount(Bag innerBag)
+        public void AddBag(Bag bag, int quantity)
         {
-            int count = 0;
-
-            if (innerBag == this) count++;
-
-            foreach (var kvp in InnerBags)
-            {
-                if (kvp.Key == innerBag)
-                {
-                    count += kvp.Value;
-                }
-                else
-                {
-                    count += kvp.Key.GetBagCount(innerBag);
-                }
-            }
-            
-            return count;
+            _map[bag] = quantity;
         }
-        
+
+        public bool CanContain(Bag bag)
+        {
+            // it's me!
+            if (bag == this) return true;
+
+            return _map.Any(kvp => kvp.Key.CanContain(bag));
+        }
+
+        public override int GetHashCode()
+        {
+            return Color.GetHashCode() * 17;
+        }
     }
 }
