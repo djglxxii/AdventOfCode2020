@@ -8,69 +8,59 @@ namespace Day7
 {
     internal class Program
     {
-        private static Dictionary<Bag, List<Bag>> _bagMap = new Dictionary<Bag, List<Bag>>();
-
         public static void Main(string[] args)
         {
+            var map = new Dictionary<string, List<KeyValuePair<string,int>>>();
+            
             using (var reader = new StreamReader("input.txt"))
             {
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine();
-                    
-                    var outterBag = new Bag(line.Substring(0, line.IndexOf("bags")));
-                    
+
+                    var outterBagColor = line.Substring(0, line.IndexOf("bags")).Trim();
+
                     var innerBags = line.Substring(line.IndexOf("contain"), line.Length - line.IndexOf("contain"))
                         .Replace("contain", "")
                         .Replace("bags", "")
+                        .Replace("bag", "")
                         .Replace(".", "")
                         .Split(',')
                         .Select(b => b.Trim());
 
-                    _bagMap[outterBag] = new List<Bag>();
+                    map[outterBagColor] = new List<KeyValuePair<string, int>>();
                     
                     foreach (var bag in innerBags)
                     {
                         if (bag == "no other") continue;
 
                         string[] tmpArr = bag.Split(' ');
-                        string color = string.Join(" ", tmpArr, 1, tmpArr.Length - 1);
+                        string innerBagColor = string.Join(" ", tmpArr, 1, tmpArr.Length - 1);
                         int quantity = int.Parse(tmpArr[0]);
-
-                        var innerBag = new Bag(color);
-                        innerBag.Quantity = quantity;
-                        
-                        _bagMap[outterBag].Add(innerBag);
+                        map[outterBagColor].Add(new KeyValuePair<string, int>(innerBagColor, quantity));
                     }
                 }
-
-                int count = 0;
-                
-                foreach (var bag in _bagMap)
-                {
-                    if (CanContain("shiny gold", bag.Key))
-                    {
-                        count++;
-                    }
-                }
-                
-                Console.WriteLine(count);
             }
-        }
+            
+            int count = 0;
 
-        private static bool CanContain(string innerBagColor, Bag outterBag)
-        {
-            return _bagMap[outterBag].Any(b => b.Color == innerBagColor);
+            foreach (var kvp in map)
+            {
+                if (kvp.Key == "shiny gold")
+                {
+                    count++;
+                }
+                
+                foreach (var innerKvp in kvp.Value)
+                {
+                    if (innerKvp.Key == "shiny gold")
+                    {
+                        count = count + innerKvp.Value;
+                    }
+                }
+            }
+                
+            Console.WriteLine(count);
         }
     }
 }
-
-
-// if (bag == "no other")
-// {
-//     _bagMap[outterBag] = null;
-//     continue;
-// }
-//
-
-// _bagMap[outterBag] = new Tuple<string, int>(color, quantity);
