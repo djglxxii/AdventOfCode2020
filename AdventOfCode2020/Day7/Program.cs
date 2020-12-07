@@ -71,6 +71,7 @@ namespace Day7
             }
             
             Console.WriteLine(count);
+            Console.WriteLine(myBag.GetBagCount());
             
             Console.WriteLine("Done! Press any key to exit.");
             Console.ReadLine();

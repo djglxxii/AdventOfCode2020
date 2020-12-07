@@ -27,6 +27,22 @@ namespace Day7
             return _map.Any(kvp => kvp.Key.CanContain(bag));
         }
 
+        public int GetBagCount()
+        {
+            int count = 0;
+
+            foreach (var kvp in _map)
+            {
+                var bag = kvp.Key;
+                var quantity = kvp.Value;
+
+                count += quantity;
+                count += bag.GetBagCount();
+            }
+
+            return count;
+        }
+        
         public override int GetHashCode()
         {
             return Color.GetHashCode() * 17;
