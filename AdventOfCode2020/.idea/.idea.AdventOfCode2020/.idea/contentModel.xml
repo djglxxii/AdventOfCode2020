@@ -73,6 +73,7 @@
         </e>
       </e>
       <e p="Day7" t="IncludeRecursive">
+        <e p="Bag.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Day7.csproj" t="IncludeRecursive" />
         <e p="input.txt" t="Include" />
