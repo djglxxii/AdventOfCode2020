@@ -13,21 +13,26 @@ namespace Day7
             Color = bagColor;
         }
 
-        public bool CanContain(string bagColor)
+        public int GetBagCount(Bag innerBag)
         {
-            foreach (var bag in InnerBags)
-            {
-                if (bag.Key.Color == bagColor) return true;
-                if (bag.Key.CanContain(bagColor)) return true;
-            }
+            int count = 0;
 
-            return false;
+            if (innerBag == this) count++;
+
+            foreach (var kvp in InnerBags)
+            {
+                if (kvp.Key == innerBag)
+                {
+                    count += kvp.Value;
+                }
+                else
+                {
+                    count += kvp.Key.GetBagCount(innerBag);
+                }
+            }
+            
+            return count;
         }
-        public override int GetHashCode()
-        {
-            return Color.GetHashCode();
-        }
-        
         
     }
 }
