@@ -7,6 +7,7 @@
     <projectFile>Day2/Day2.csproj</projectFile>
     <projectFile>Day5/Day5.csproj</projectFile>
     <projectFile>Day6/Day6.csproj</projectFile>
+    <projectFile>Day7/Day7.csproj</projectFile>
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -27,7 +28,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2378d29e-cd41-467e-8eef-018bfc58c525" name="Default Changelist" comment="" />
+    <list default="true" id="2378d29e-cd41-467e-8eef-018bfc58c525" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Day7/Day7.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day7/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day7/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day7/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AdventOfCode2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdventOfCode2020/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdventOfCode2020.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AdventOfCode2020.sln" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,9 +43,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/e9/683d3823/Number.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -57,6 +62,7 @@
         <option value="$PROJECT_DIR$/Day6/input.txt" />
         <option value="$PROJECT_DIR$/Day6/GroupQuestionnaireV2.cs" />
         <option value="$PROJECT_DIR$/Day6/Program.cs" />
+        <option value="$PROJECT_DIR$/Day7/Program.cs" />
       </list>
     </option>
   </component>
@@ -195,6 +201,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Day7" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Day7/Day7.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -213,6 +237,7 @@
       <workItem from="1607231835258" duration="888000" />
       <workItem from="1607266491806" duration="1067000" />
       <workItem from="1607276291200" duration="687000" />
+      <workItem from="1607349640311" duration="95000" />
     </task>
     <servers />
   </component>
@@ -347,11 +372,12 @@
     </state>
     <state width="1493" height="289" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1607276984768" />
     <state width="1876" height="369" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607112326765" />
-    <state x="442" y="198" key="Rider.ProjectTemplateDialog.Size" timestamp="1607231895066">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="737" y="336" key="Rider.ProjectTemplateDialog.Size" timestamp="1607349708540">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="442" y="198" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824@0.0.1536.824" timestamp="1607231895066" />
     <state x="552" y="250" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1607106590695" />
+    <state x="737" y="336" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400@0.0.2560.1400" timestamp="1607349708540" />
     <state x="560" y="123" key="RollbackChangesDialog" timestamp="1607276927457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
