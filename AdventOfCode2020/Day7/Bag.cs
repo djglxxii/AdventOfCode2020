@@ -27,7 +27,7 @@ namespace Day7
             return _map.Any(kvp => kvp.Key.CanContain(bag));
         }
 
-        public int GetBagCount()
+        public int GetTotalBagCount()
         {
             int count = 0;
 
@@ -37,7 +37,7 @@ namespace Day7
                 var quantity = kvp.Value;
 
                 count += quantity;
-                count += bag.GetBagCount();
+                count += bag.GetTotalBagCount() * quantity;
             }
 
             return count;

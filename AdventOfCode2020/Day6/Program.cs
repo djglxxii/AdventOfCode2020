@@ -20,7 +20,7 @@ namespace Day6
         {
             var questionnaires = new List<GroupQuestionnaire>();
 
-            using (var reader = new StreamReader("input.txt"))
+            using (var reader = new StreamReader("exampleInput.txt"))
             {
                 var gq = new GroupQuestionnaire();
 

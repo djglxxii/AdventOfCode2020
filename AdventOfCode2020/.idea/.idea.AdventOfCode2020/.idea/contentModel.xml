@@ -77,6 +77,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Day7.csproj" t="IncludeRecursive" />
         <e p="exampleInput.txt" t="Include" />
+        <e p="exampleInput2.txt" t="Include" />
         <e p="input.txt" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -86,7 +87,7 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AdventOfCode2020.2118852585.00" t="ExcludeRecursive" />
+    <e p="C:\Users\djgLXXII\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\djgLXXII\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AdventOfCode2020.2118852585.00" t="ExcludeRecursive" />
   </component>
 </project>

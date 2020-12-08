@@ -70,8 +70,8 @@ namespace Day7
                 }
             }
             
-            Console.WriteLine(count);
-            Console.WriteLine(myBag.GetBagCount());
+            Console.WriteLine($"Bags that can contain at least one shiny gold bag: {count}");
+            Console.WriteLine($"Total bags required inside shiny gold bag: {myBag.GetTotalBagCount()}");
             
             Console.WriteLine("Done! Press any key to exit.");
             Console.ReadLine();
